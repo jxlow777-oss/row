@@ -2997,10 +2997,10 @@ img, video, canvas, svg { max-width: 100%; }
       const filename = 'photo_' + Date.now() + '_' +
         Math.random().toString(36).slice(2, 10) + '.jpg';
       const { error } = await pcSupa.storage
-        .from('progress-photos')
+        .from('progress photos')
         .upload(filename, blob, { contentType: 'image/jpeg', upsert: false });
       if (error) return null;
-      const { data } = pcSupa.storage.from('progress-photos').getPublicUrl(filename);
+      const { data } = pcSupa.storage.from('progress photos').getPublicUrl(filename);
       return data ? data.publicUrl : null;
     } catch (e) { return null; }
   }
